@@ -38,6 +38,8 @@ sudo dnf install uboot-images-copr
 # https://nullr0ute.com/2021/05/fedora-on-the-pinebook-pro/
 # (CHANGE 'target' PARAM VALUE TO MATCH YOUR DEVICE, OR JUST KEEP THE PINEBOOK PRO TARGET,
 # AND MANUALLY OVERWRITE THE UBOOT FILES CREATED ON THE MICROSD, WITH YOUR DEVICE'S FILES FROM: /usr/share/uboot/)
+# IMPORTANT NOTE:
+# Rock5b devices WILL NOT SUPPORT HDMI DISPLAY OUTPUT UNTIL LINUX KERNEL v6.13, SO ONBOARD SPI FLASH CAN ONLY BE DONE FLYING BLIND (GOOD LUCK, I GAVE UP)
 
 ========================================================
 
