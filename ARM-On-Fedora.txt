@@ -1,0 +1,53 @@
+
+############################################################################################################################
+Copyright 2024 GNU FDL v1.3 [https://www.gnu.org/licenses/fdl-1.3.html]
+Fedora ARM u-boot documentation by Mike Kilday: Mike@DragonFrugal.com (leave this copyright / attribution intact in ALL forks / copies!)
+############################################################################################################################
+
+In short, to boot Fedora on ARM, CUSTOM-built u-boot files must be used, flashed either to the ONBOARD SPI (for booting from m2 drive etc), OR to a microsd card (for USB boot).
+
+IMPORTANT WARNING: Other operating systems may no longer be bootable on the device after adding Fedora u-boot support, and may require re-flashing a different u-boot setup to run again (following the OEM / other distro's u-boot flashing instructions).
+
+========================================================
+
+NOTES / COMMANDS FOR FEDORA U-BOOT SETUP:
+
+# Install uboot tools (for making ARM disk images bootable)
+sudo dnf install -y --skip-broken uboot-tools uboot-images-armv8 rkdeveloptool gdisk
+
+# IOT (ARM CPU) image installer (fedora raspi / radxa / other images to microsd, etc), AND enable 'updates-testing' repo
+# https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer
+sudo dnf install --enablerepo=updates-testing -y arm-image-installer
+
+# Add repo to have various FEDORA-COMPATIBLE uboot images
+# (LAST PARAMETER IS OPTIONAL [OR REQUIRED, IF INSTALLED ON A DIFFERENT DEVICE WITHOUT A MATCHING ARCHITECTURE])
+sudo dnf copr enable pbrobinson/u-boot fedora-41-aarch64
+
+# Get Fedora uboot images (are stored in: /usr/share/uboot/), for device flashing
+sudo dnf install uboot-images-copr
+
+####
+# Fedora u-boot USAGE...
+####
+# General U-boot Flashing Notice:
+# https://lists.fedoraproject.org/archives/list/arm@lists.fedoraproject.org/thread/G3QENPQCNFTXSM5FZZLEUA6B7J4QKFXV/
+# Flash to microsd for USB boot, or to onboard SPI for M2 boot (see further below for Fedora-compatible onboard SPI flash directions,
+# DO NOT USE Radxa's [or any other OEM's] SPI flash method for Fedora support, as it's NOT compatible, and can brick your device!)
+####
+# Onboard SPI Flashing:
+# https://nullr0ute.com/2021/05/fedora-on-the-pinebook-pro/
+# (CHANGE 'target' PARAM VALUE TO MATCH YOUR DEVICE, OR JUST KEEP THE PINEBOOK PRO TARGET,
+# AND MANUALLY OVERWRITE THE UBOOT FILES CREATED ON THE MICROSD, WITH YOUR DEVICE'S FILES FROM: /usr/share/uboot/)
+
+========================================================
+
+NOTES FOR (EXPERIMENTAL) EDK2:
+
+Some features are still lacking as of late 2024, such as thermal zones on Rock2b (for reading CPU Core temperature).
+
+EDK2 Documentation and boot files can be found here:
+https://github.com/edk2-porting/edk2-rk3588/blob/v0.11.2/README.md#getting-started
+
+========================================================
+
+
