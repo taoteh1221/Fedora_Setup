@@ -17,6 +17,10 @@ sudo dnf install -y --skip-broken uboot-tools uboot-images-armv8 rkdeveloptool g
 
 # IOT (ARM CPU) image installer (fedora raspi / radxa / other images to microsd, etc), AND enable 'updates-testing' repo
 # https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer
+# All board ids (filenames) in /usr/share/arm-image-installer/boards.d/ are the available
+# (fully supported) "target" parameter values for disk writing uboot automatically to same storage as the rootfs image
+# Headless setup w/ wifi:
+# https://www.redhat.com/en/blog/fedora-iot-raspberry-pi
 sudo dnf install --enablerepo=updates-testing -y arm-image-installer
 
 # Add repo to have various FEDORA-COMPATIBLE uboot images
