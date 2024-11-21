@@ -13,22 +13,23 @@ IMPORTANT WARNING: Other operating systems may no longer be bootable on the devi
 NOTES / COMMANDS FOR FEDORA U-BOOT SETUP:
 
 # Install uboot tools (for making ARM disk images bootable)
-sudo dnf install -y --skip-broken uboot-tools uboot-images-armv8 rkdeveloptool gdisk
+sudo dnf install -y --skip-broken --skip-unavailable uboot-tools uboot-images-armv8 rkdeveloptool gdisk
 
-# IOT (ARM CPU) image installer (fedora raspi / radxa / other images to microsd, etc), AND enable 'updates-testing' repo
+# IOT (ARM CPU) image installer (fedora raspi / radxa / other images to microsd, etc),
+# Fedora USB disk image creator, AND enable 'updates-testing' repo
 # https://fedoraproject.org/wiki/Architectures/ARM/Installation#Arm_Image_Installer
 # All board ids (filenames) in /usr/share/arm-image-installer/boards.d/ are the available
 # (fully supported) "target" parameter values for disk writing uboot automatically to same storage as the rootfs image
 # Headless setup w/ wifi:
 # https://www.redhat.com/en/blog/fedora-iot-raspberry-pi
-sudo dnf install --enablerepo=updates-testing -y arm-image-installer
+sudo dnf install --enablerepo=updates-testing -y arm-image-installer liveusb-creator
 
 # Add repo to have various FEDORA-COMPATIBLE uboot images
 # (LAST PARAMETER IS OPTIONAL [OR REQUIRED, IF INSTALLED ON A DIFFERENT DEVICE WITHOUT A MATCHING ARCHITECTURE])
-sudo dnf copr enable pbrobinson/u-boot fedora-41-aarch64
+sudo dnf copr enable -y pbrobinson/u-boot $UBOOT_DEV_BUILDS
 
 # Get Fedora uboot images (are stored in: /usr/share/uboot/), for device flashing
-sudo dnf install uboot-images-copr
+sudo dnf install -y uboot-images-copr
 
 ####
 # Fedora u-boot USAGE...
@@ -44,6 +45,8 @@ sudo dnf install uboot-images-copr
 # AND MANUALLY OVERWRITE THE UBOOT FILES CREATED ON THE MICROSD, WITH YOUR DEVICE'S FILES FROM: /usr/share/uboot/)
 # IMPORTANT NOTE:
 # Rock5b devices WILL NOT SUPPORT HDMI DISPLAY OUTPUT UNTIL LINUX KERNEL v6.13, SO ONBOARD SPI FLASH CAN ONLY BE DONE FLYING BLIND (GOOD LUCK, I GAVE UP)
+# MORE RELEVANT ROCK5B SETUP NOTES ARE HERE:
+# https://yrzr.github.io/notes-build-uboot-for-rock5b/#3-collabora-u-boot-mainline
 
 ========================================================
 
