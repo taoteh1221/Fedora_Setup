@@ -1,6 +1,6 @@
 
 ############################################################################################################################
-Copyright 2024 GNU FDL v1.3 [https://www.gnu.org/licenses/fdl-1.3.html]
+Copyright 2024-2025 GNU FDL v1.3 [https://www.gnu.org/licenses/fdl-1.3.html]
 Fedora ARM u-boot documentation by Mike Kilday: Mike@DragonFrugal.com (leave this copyright / attribution intact in ALL forks / copies!)
 ############################################################################################################################
 
@@ -48,7 +48,7 @@ sudo dnf install -y uboot-images-copr
 # https://yrzr.github.io/notes-build-uboot-for-rock5b/#3-collabora-u-boot-mainline
 ####
 # Raspi Hat setup:
-https://fedoraproject.org/w/index.php?title=Architectures/ARM/Raspberry_Pi/HATs
+# https://fedoraproject.org/w/index.php?title=Architectures/ARM/Raspberry_Pi/HATs
 
 ========================================================
 
