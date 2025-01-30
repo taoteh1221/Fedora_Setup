@@ -1,0 +1,9 @@
+
+# Shows any available wifi networking (typically set as: wlan0)
+ip link show
+
+# Sets up a persistent wifi connection (works even after reboot)
+sudo nmcli device wifi connect "YOUR-SSID" password "YOUR-PASSWORD"
+
+# Installs any missing wifi firmware
+sudo dnf group install -y hardware-support
