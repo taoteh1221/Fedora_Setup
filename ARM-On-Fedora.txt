@@ -49,6 +49,9 @@ sudo dnf install -y uboot-images-copr
 ####
 # Raspi Hat setup:
 # https://fedoraproject.org/w/index.php?title=Architectures/ARM/Raspberry_Pi/HATs
+####
+# Serial Console setup:
+# https://www.anintegratedworld.com/how-to-connect-raspberry-pi-to-ubuntu-via-usb-cable
 
 ========================================================
 
