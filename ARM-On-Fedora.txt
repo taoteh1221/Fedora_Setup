@@ -8,6 +8,8 @@ In short, to boot Fedora on ARM, CUSTOM-built u-boot files must be used, flashed
 
 IMPORTANT WARNING: Other operating systems may no longer be bootable on the device after adding Fedora u-boot support, and may require re-flashing a different u-boot setup to run again (following the OEM / other distro's u-boot flashing instructions).
 
+BUG REPORTING: Add "ARMTracker" (CASE-SENSITIVE!) in the blocker field when opening the bugzilla ticket, and the ticket will automatically be setup to report ARM-based bugs.
+
 ========================================================
 
 NOTES / COMMANDS FOR FEDORA U-BOOT SETUP:
