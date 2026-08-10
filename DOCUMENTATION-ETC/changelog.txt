@@ -5,3 +5,12 @@
 INITIAL stable x86 support (ARM support untested!)
 
 -------------------------------------------------------------------
+
+-------------------------------------------------------------------
+1.11.00:
+
+-NVME / HDD storage health checks every 4 hours (with desktop alerts)
+
+-Cleaup of abandonded repos
+
+-------------------------------------------------------------------

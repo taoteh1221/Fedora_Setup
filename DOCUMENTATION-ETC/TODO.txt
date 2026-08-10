@@ -1,2 +1,14 @@
 
+
 All instances of "sudo bash -c" may not run properly in the script (since we do NOT call the script with sudo [we disallow it, as we run some user-only logic])...verify each instance, we may need to use "sudo tee" instead (with or without the -a flag [for appending]).
+
+
+Find a better xpadneo or eqivelent repo / download, as the one we used previously is outdated.
+
+
+Most or all of the script configs can be converted into a y/n or blank / multiple choice question during runtime. We can run all the questions at the beginning of the script, and set the same-named vars with yes/no, blank, or a multiple choice list. This allows the user to run the script immediately upon downloading, without having to configure it at all.
+
+
+Maybe have an optional upgrade check on running the script? We could use the same upgrade logic in my BT Radio script.
+
+
