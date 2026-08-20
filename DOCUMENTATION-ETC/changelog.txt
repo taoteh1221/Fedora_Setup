@@ -7,9 +7,17 @@ INITIAL stable x86 support (ARM support untested!)
 -------------------------------------------------------------------
 
 -------------------------------------------------------------------
-1.11.00:
+1.10.01:
+
+-BUG FIX: Add DKMS config, so it uses our akmods MOK key pair (for driver module signing / secureboot)
+
+-xpadneo (xbox wireless controller drivers) installation / updating, with secureboot support
 
 -NVME / HDD storage health checks every 4 hours (with desktop alerts)
+
+-'find_large_files' mode, to troubleshoot filled storage devices
+
+-Option to install jellyfin media server
 
 -Cleaup of abandonded repos
 
