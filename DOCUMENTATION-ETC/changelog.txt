@@ -9,7 +9,9 @@ INITIAL stable x86 support (ARM support untested!)
 -------------------------------------------------------------------
 1.10.01:
 
--BUG FIX: Add DKMS config, so it uses our akmods MOK key pair (for driver module signing / secureboot)
+-BUG FIX: Added DKMS config, so it uses our akmods MOK key pair (for driver module signing / secureboot)
+
+-BUG FIX: Fixed wifi detection
 
 -xpadneo (xbox wireless controller drivers) installation / updating, with secureboot support
 
